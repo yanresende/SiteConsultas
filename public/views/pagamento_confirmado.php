@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pagamento Confirmado</title>
 	<link rel="icon" href="../assets/img/favicon.png" type="image/png">
-	<meta property="og:title" content="New Max Buscas">
+	<meta property="og:title" content="Busca Infos">
 	<meta property="og:description" content="Site de buscas">
-	<meta property="og:image" content="https://newmaxbuscas.pro/public/assets/img/favicon.jpg">
-	<meta property="og:url" content="https://newmaxbuscas.pro">
+	<meta property="og:image" content="https://BuscaInfos.pro/public/assets/img/favicon.jpg">
+	<meta property="og:url" content="https://BuscaInfos.pro">
 	<meta property="og:type" content="website">
 	<link rel="stylesheet" href="../assets/css/pagamentos.css?v=<?php echo md5_file('../assets/css/pagamentos.css'); ?>">
 </head>

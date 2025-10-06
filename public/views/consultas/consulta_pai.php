@@ -34,12 +34,12 @@ if ($result->num_rows > 0) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Painel de Consulta Nome Pai</title>
+	<title>Painel de Consulta</title>
 	<link rel="icon" href="../../assets/img/favicon.png" type="image/png">
-	<meta property="og:title" content="Busca Brasil">
+	<meta property="og:title" content="Busca Infos">
 	<meta property="og:description" content="Site de buscas">
-	<meta property="og:image" content="https://buscabrasil.online/public/assets/img/favicon.jpg">
-	<meta property="og:url" content="https://buscabrasil.online">
+	<meta property="og:image" content="https://BuscaInfos.online/public/assets/img/favicon.jpg">
+	<meta property="og:url" content="https://BuscaInfos.online">
 	<meta property="og:type" content="website">
 	<link rel="stylesheet" href="../../assets/css/consultas.css?v=<?php echo md5_file('../../assets/css/consultas.css'); ?>">
 	<script>

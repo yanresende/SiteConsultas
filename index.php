@@ -12,10 +12,10 @@ if (isset($_GET['v'])) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="public/assets/img/favicon.png" type="image/png">
-	<meta property="og:title" content="Busca Brasil">
+	<meta property="og:title" content="Busca Infos">
 	<meta property="og:description" content="Site de buscas">
-	<meta property="og:image" content="https://buscabrasil.online/public/assets/img/favicon.jpg">
-	<meta property="og:url" content="https://buscabrasil.online">
+	<meta property="og:image" content="https://BuscaInfos.online/public/assets/img/favicon.jpg">
+	<meta property="og:url" content="https://BuscaInfos.online">
 	<meta property="og:type" content="website">
 	<title>Verificando Acesso</title>
 	<style>

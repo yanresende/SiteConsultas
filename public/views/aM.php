@@ -36,10 +36,10 @@ if ($result->num_rows > 0) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Busca Brasil</title>
 	<link rel="icon" href="../assets/img/favicon.png" type="image/png">
-	<meta property="og:title" content="Busca Brasil">
+	<meta property="og:title" content="Busca Infos">
 	<meta property="og:description" content="Site de buscas">
-	<meta property="og:image" content="https://buscabrasil.online/public/assets/img/favicon.jpg">
-	<meta property="og:url" content="https://buscabrasil.online">
+	<meta property="og:image" content="https://BuscaInfos.online/public/assets/img/favicon.jpg">
+	<meta property="og:url" content="https://BuscaInfos.online">
 	<meta property="og:type" content="website">
 	<link rel="stylesheet" href="../assets/css/aM.css?v=<?php echo md5_file('../assets/css/aM.css'); ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -73,12 +73,12 @@ if ($result->num_rows > 0) {
 		<div class="popup">
 			<button class="close-btn" onclick="document.getElementById('popupOverlay').style.display='none'">Fechar</button>
 
-			<img src="../assets/img/busca_brasil_icone.png" alt="Logo Busca Brasil" />
+			<img src="../assets/img/busca_brasil_icone.png" alt="Logo Busca Infos" />
 
 			<h2>⚠️ Atenção!</h2>
 
 			<p>
-				Todos os pagamentos devem ser realizados exclusivamente através do link oficial <strong>BuscaBrasilPay</strong>.
+				Todos os pagamentos devem ser realizados exclusivamente através do link oficial <strong>BuscaInfosPay</strong>.
 			</p>
 
 			<p>
@@ -98,7 +98,7 @@ if ($result->num_rows > 0) {
 			</p>
 			<p>
 				Atenciosamente,<br>
-				Busca Brasil
+				Busca Infos
 			</p>
 		</div>
 	</div>
@@ -464,7 +464,7 @@ if ($result->num_rows > 0) {
 
 	<footer>
 		<div class="copy">
-			<p>Copyright © 2025 Busca Brasil | All Rights Reserved </p>
+			<p>Copyright © 2025 Busca Infos | All Rights Reserved </p>
 		</div>
 	</footer>
 

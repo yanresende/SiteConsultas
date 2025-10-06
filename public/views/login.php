@@ -19,10 +19,10 @@ $vendedor_id = $_SESSION['vendedor_id'] ?? '1';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login Busca Brasil</title>
 	<link rel="icon" href="../assets/img/favicon.png" type="image/png">
-	<meta property="og:title" content="Busca Brasil">
+	<meta property="og:title" content="Busca Infos">
 	<meta property="og:description" content="Site de buscas">
-	<meta property="og:image" content="https://newmaxbuscas.pro/public/assets/img/favicon.jpg">
-	<meta property="og:url" content="https://newmaxbuscas.pro">
+	<meta property="og:image" content="https://BuscaInfos.pro/public/assets/img/favicon.jpg">
+	<meta property="og:url" content="https://BuscaInfos.pro">
 	<meta property="og:type" content="website">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link rel="stylesheet" href="../assets/css/login.css?v=<?php echo md5_file('../assets/css/login.css'); ?>">
@@ -45,8 +45,8 @@ $vendedor_id = $_SESSION['vendedor_id'] ?? '1';
 
 			<button type="submit" class="btn-login">Entrar</button>
 		</form>
-		<button class="btn-subscribe" onclick="window.location.href='https://buscabrasil.com?v=<?= $vendedor_id ?>'" aria-label="Assinar plano">Assinar Plano</button>
-		<p class="subscribe-desc">Tenha acesso a vários modulos de consultas garantindo sua assinatura no Busca Brasil</p>
+		<button class="btn-subscribe" onclick="window.location.href='https://BuscaInfos.com?v=<?= $vendedor_id ?>'" aria-label="Assinar plano">Assinar Plano</button>
+		<p class="subscribe-desc">Tenha acesso a vários modulos de consultas garantindo sua assinatura no Busca Infos</p>
 		<p id="error-message" class="error-message"></p>
 	</div>
 	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
