@@ -1,0 +1,120 @@
+@use "colors";
+
+body {
+	background-color: black;
+}
+
+.admin-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: lighten(colors.$cor-secundaria, 5%);
+	border-radius: 12px;
+	box-shadow: 0 0 12px colors.$cor-sombra;
+}
+
+h2 {
+	text-align: center;
+	color: colors.$cor-texto-ouro;
+}
+
+.consultas-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.consulta-bloco {
+	background-color: lighten(colors.$cor-secundaria, 8%);
+	color: colors.$cor-texto;
+	border: 1px solid colors.$cor-borda;
+	border-radius: 12px;
+	padding: 20px;
+	box-shadow: 0 0 8px colors.$cor-sombra;
+	width: 250px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 0 12px colors.$cor-sombra;
+	}
+
+	h3 {
+		margin-top: 0;
+		font-size: 1.3em;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		padding-bottom: 8px;
+		color: colors.$cor-texto-ouro;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 10px 0 0 0;
+
+		li {
+			padding: 5px 0;
+			font-size: 0.95em;
+			border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	&.landing-page {
+		background-color: lighten(colors.$cor-secundaria, 12%);
+		box-shadow: 0 0 10px colors.$cor-sombra-ouro;
+		color: colors.$cor-texto;
+		border: 1px solid colors.$cor-borda;
+	}
+}
+
+.filtro-periodo {
+	margin-top: 30px;
+	padding: 15px;
+	background: lighten(colors.$cor-secundaria, 5%);
+	border: 1px solid colors.$cor-borda;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 0 10px colors.$cor-sombra;
+	color: colors.$cor-texto;
+
+	input[type="date"] {
+		margin: 0 10px;
+		padding: 5px;
+		background-color: colors.$cor-placeholder;
+		color: colors.$cor-texto;
+		border: 1px solid colors.$cor-borda;
+		border-radius: 5px;
+	}
+
+	button {
+		padding: 8px 16px;
+		background-color: lighten(colors.$cor-secundaria, 10%);
+		color: colors.$cor-texto;
+		border: 1px solid colors.$cor-borda;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background 0.3s ease, box-shadow 0.3s ease;
+
+		&:hover {
+			background-color: lighten(colors.$cor-secundaria, 20%);
+			box-shadow: 0 0 8px colors.$cor-sombra;
+		}
+	}
+}
+
+.resultado-periodo {
+	margin-top: 20px;
+	padding: 10px;
+	background: lighten(colors.$cor-secundaria, 8%);
+	border-radius: 8px;
+	border: 1px solid colors.$cor-borda;
+	color: colors.$cor-texto;
+	box-shadow: 0 0 8px colors.$cor-sombra;
+}

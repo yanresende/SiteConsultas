@@ -1,0 +1,175 @@
+let captchaValidado = false;
+
+function onCaptchaSuccess() {
+	captchaValidado = true;
+	document.getElementById("consultarBtn").disabled = false;
+}
+
+function resetCaptcha() {
+	captchaValidado = false;
+	document.getElementById("consultarBtn").disabled = true;
+
+	setTimeout(() => {
+		const captchaContainer = document.getElementById("captcha");
+		if (captchaContainer) {
+			captchaContainer.innerHTML = "";
+			turnstile.render("#captcha", {
+				sitekey: "0x4AAAAAABCUfVi2iZQzzgzx",
+				callback: onCaptchaSuccess,
+			});
+		}
+	}, 500);
+}
+
+function exibirCampo(label, valor) {
+	if (
+		valor === null ||
+		valor === undefined ||
+		valor === "" ||
+		valor === "0.00"
+	) {
+		return `<p><strong>${label}:</strong> <span style="color: yellow;">Disponível no Premium ⭐⭐⭐⭐⭐</span></p>`;
+	}
+	return `<p><strong>${label}:</strong> ${valor}</p>`;
+}
+
+function exibirLista(label, lista) {
+	if (!Array.isArray(lista) || lista.length === 0) {
+		return `<p><strong>${label}:</strong> Nenhum encontrado</p>`;
+	}
+
+	let html = `<p><strong>${label}:</strong></p><ul>`;
+	lista.forEach((item) => {
+		html += `<li>${item}</li>`;
+	});
+	html += "</ul>";
+	return html;
+}
+
+function consultarData() {
+	if (!captchaValidado) {
+		document.getElementById("resultado").innerText =
+			"Por favor, resolva o CAPTCHA.";
+		return;
+	}
+
+	const consultarBtn = document.getElementById("consultarBtn");
+	consultarBtn.disabled = true;
+
+	const dataInput = document.getElementById("data");
+	const data = dataInput.value;
+	const resultadoElement = document.getElementById("resultado");
+	const dadosElement = document.getElementById("dados");
+
+	resultadoElement.innerText = "Consultando...";
+	dadosElement.style.display = "none";
+
+	const dataLimpo = data.trim();
+	const modulo = "consulta_birthday";
+
+	// 1. Verificar limite
+	fetch(`../../backend/consultas/verificar_limite.php?modulo=${modulo}`)
+		.then((response) => response.json())
+		.then((verificacao) => {
+			if (!verificacao.autorizado) {
+				throw new Error("Limite atingido ou acesso negado.");
+			}
+
+			resultadoElement.innerText = "Consultando...";
+
+			// Agora sim, faz a consulta
+			return fetch("../../backend/consultas/api_birthday.php", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ data: dataLimpo }),
+			});
+		})
+		.then(async (response) => {
+			if (!response) return;
+
+			const contentType = response.headers.get("content-type");
+			const isJson =
+				contentType && contentType.indexOf("application/json") !== -1;
+
+			if (!response.ok) {
+				let errorMessage = `Erro na consulta (${response.status}).`;
+
+				if (isJson) {
+					const errorData = await response.json();
+					errorMessage = errorData.erro || errorMessage;
+				}
+
+				throw new Error(errorMessage);
+			}
+
+			return isJson ? response.json() : null;
+		})
+
+		.then((resposta) => {
+			const pessoas = resposta.dados?.data || [];
+
+			if (!Array.isArray(pessoas) || pessoas.length === 0) {
+				resultadoElement.innerText =
+					"Dados inexistentes / Limite diário atingido";
+				return;
+			}
+
+			let html = `<h3>Resultado da consulta</h3>`;
+
+			pessoas.forEach((pessoa, index) => {
+				const nome = pessoa.name || "Não informado";
+				const cpf = pessoa.cpf || "Não informado";
+				const sexo = pessoa.gender || "Não informado";
+				const nascimento = pessoa.birth_date || "Não informado";
+				const nomeMae = pessoa.mother_name || "Não informado";
+				const nomePai = pessoa.father_name || "Não informado";
+
+				html += `
+        		<div style="margin-bottom: 16px; border: 1px solid #ccc; padding: 10px;">
+          		<h4>Pessoa ${index + 1}</h4>
+          		${exibirCampo("Nome", nome)}
+          		${exibirCampo("CPF", cpf)}
+          		${exibirCampo("Nascimento", nascimento)}
+          		${exibirCampo("Nome da Mãe", nomeMae)}
+          		${exibirCampo("Nome do Pai", nomePai)}
+          		${exibirCampo("Sexo", sexo)}
+        		</div>
+        		`;
+			});
+
+			dadosElement.innerHTML = html;
+			dadosElement.style.display = "block";
+			resultadoElement.innerText = `Consulta realizada para o data: ${dataLimpo}`;
+			document.getElementById("acoes").style.display = "block";
+			return fetch("../../backend/consultas/registrar_consulta.php", {
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				body: `modulo=${modulo}`,
+			});
+		})
+		.catch((error) => {
+			console.error("Erro ao consultar nome:", error);
+			resultadoElement.innerText = `Erro: ${error.message}`;
+			dadosElement.style.display = "none";
+		})
+		.finally(() => {
+			consultarBtn.disabled = false;
+			resetCaptcha();
+		});
+}
+
+function formatData(input) {
+	let value = input.value.replace(/\D/g, ""); // Remove tudo que não é número
+
+	if (value.length > 8) {
+		value = value.slice(0, 8); // Limita a 8 dígitos
+	}
+
+	if (value.length >= 5) {
+		input.value = `${value.slice(0, 2)}-${value.slice(2, 4)}-${value.slice(4)}`;
+	} else if (value.length >= 3) {
+		input.value = `${value.slice(0, 2)}-${value.slice(2)}`;
+	} else {
+		input.value = value;
+	}
+}

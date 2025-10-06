@@ -1,0 +1,25 @@
+$cor-primaria: #1de110; // azul principal (borda, botão, hover)
+$cor-secundaria: #000000; // fundo escuro principal
+$cor-texto: #ffffff; // textos em geral
+$cor-texto-ouro: gold; // textos em geral
+$cor-placeholder: #111111;
+$cor-sombra: rgba(9, 255, 0, 0.7); // sombra geral
+$cor-sombra-ouro: rgba(255, 191, 0, 0.7); // sombra geral
+$cor-container-bg: rgba(11, 46, 19, 0.85); // fundo container semi-transparente
+$cor-input-bg: lighten($cor-secundaria, 5%); // fundo do input escuro
+$cor-borda: #2ebc2e; // cor da borda dos inputs e botões
+$cor-verde-hover: #074a01;
+$cor-verde-hover-2: #14b50d;
+
+
+
+// Cores de Botões
+$color-button-submit-start: #1de110; // Início do gradiente do botão de submit
+$color-button-submit-end: #14b50d; // Fim do gradiente do botão de submit
+$color-button-submit-hover-start: #14b50d; // Início do gradiente do botão de submit ao passar o mouse
+$color-button-submit-hover-end: #0e8707; // Fim do gradiente do botão de submit ao passar o mouse
+
+// Cores de Sombra e Efeitos
+$shadow-color-text-neon: #1de110cc; // Sombra do texto neon (título do formulário, ícones)
+$shadow-color-button-submit: rgb(29 225 16 / 0.7); // Sombra padrão do botão de submit
+$shadow-color-button-submit-hover-active: rgb(29 225 16 / 0.85); // Sombra do botão de submit ao passar o mouse/ativo

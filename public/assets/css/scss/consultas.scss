@@ -1,0 +1,142 @@
+@use "colors";
+@debug "Arquivo correto carregado!";
+
+body {
+	margin: 0;
+	font-family: "Inter", sans-serif;
+	background: colors.$cor-secundaria;
+	color: colors.$cor-texto;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.logo {
+	width: 150px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: lighten(colors.$cor-secundaria, 5%);
+	padding: 40px;
+	border-radius: 16px;
+	box-shadow: 0 0 20px colors.$cor-sombra;
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+	gap: 15px;
+}
+
+h2,
+.dados,
+.api-instrucao,
+#resultado {
+	color: colors.$cor-texto;
+}
+
+input[type="text"] {
+	width: 80%;
+	text-align: center;
+	padding: 12px;
+	border-radius: 12px;
+	border: 1.5px solid colors.$cor-primaria;
+	background-color: colors.$cor-input-bg;
+	color: colors.$cor-texto;
+	font-size: 1rem;
+
+	&:focus {
+		outline: none;
+		border-color: colors.$cor-primaria;
+		box-shadow: 0 0 10px colors.$cor-sombra;
+	}
+
+	&::placeholder {
+		color: colors.$cor-texto;
+	}
+}
+
+button,
+#consultarBtn,
+.api-btn {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 1.125rem;
+	color: colors.$cor-texto;
+	border: none;
+	border-radius: 14px;
+	padding: 14px 0;
+	background-color: colors.$cor-primaria;
+	box-shadow: 0 6px 12px colors.$cor-sombra;
+	transition:
+		background-color 0.3s ease,
+		box-shadow 0.3s ease;
+	width: 100%;
+
+	&:hover,
+	&:focus-visible {
+		background-color: darken(colors.$cor-primaria, 10%);
+		box-shadow: 0 8px 16px colors.$cor-sombra;
+	}
+
+	&.offline {
+		background-color: red;
+		color: black;
+		box-shadow: 0 4px 8px rgb(46, 0, 0);
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
+
+.api-btn {
+	background: transparent;
+	color: colors.$cor-primaria;
+	border: 2px solid colors.$cor-primaria;
+	flex: 1;
+	max-width: 125px;
+	min-width: 125px;
+	text-align: center;
+	padding: 14px 0;
+	font-weight: 700;
+	font-size: 1.125rem;
+	border-radius: 14px;
+	cursor: pointer;
+	transition:
+		background-color 0.3s ease,
+		box-shadow 0.3s ease;
+
+	&.active {
+		background-color: colors.$cor-primaria;
+		color: colors.$cor-secundaria;
+	}
+}
+
+@media (max-width: 600px) {
+	.api-btn {
+		margin-top: 15px;
+	}
+}
+
+#acoes {
+	display: none;
+	gap: 10px; // espaçamento horizontal entre botões
+	margin-top: 20px;
+
+	button {
+		cursor: pointer;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 8px;
+		background-color: colors.$cor-primaria; // exemplo se você usa SCSS com variáveis
+		color: colors.$cor-texto;
+		box-shadow: 0 4px 8px colors.$cor-sombra;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: darken(colors.$cor-primaria, 10%);
+		}
+	}
+}

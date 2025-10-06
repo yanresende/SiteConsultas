@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+select {
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.recarga-btn {
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.recarga-btn:hover {
+    background-color: #218838;
+}
+
+.voltar {
+    margin-top: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}

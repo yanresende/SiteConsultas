@@ -1,0 +1,14 @@
+{
+    "name": "sares/testes",
+    "description": "Projeto de testes da Sares",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Sares\\Testes\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

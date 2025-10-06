@@ -1,0 +1,17 @@
+# Bloqueia acesso ao .env
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Bloqueia acesso direto à pasta backend
+<Directory "backend">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+# Bloqueia arquivos sensíveis
+<FilesMatch "^(composer\.json|composer\.lock|\.gitignore|\.editorconfig)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

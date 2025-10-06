@@ -1,0 +1,309 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  text-align: center;
+  padding: 20px;
+  color: black;
+  margin: 0;
+  /* Adicionado para remover margens padrão */
+}
+.logo {
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  width: 150px; /* Ajuste conforme necessário */
+  height: auto;
+}
+.container {
+  background-color: #000d1e;
+  padding: 30px;
+  /* Aumentado um pouco o padding */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(26, 255, 0, 0.6);
+  /* Sombra levemente ajustada */
+  max-width: 400px;
+  margin: 40px auto;
+  /* Adicionado margem superior/inferior */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Adiciona espaço entre os elementos flex */
+  /* justify-content e align-items não são necessários com flex-direction: column e elementos de bloco */
+}
+
+.resultado-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.qr-container img {
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 10px;
+  /* Espaço abaixo do título */
+}
+
+label {
+  display: block;
+  /* Garante que o label ocupe a largura */
+  margin-bottom: 5px;
+  /* Espaço abaixo do label */
+  font-weight: bold;
+}
+
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  /* Padding ligeiramente maior */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  /* Adiciona uma borda sutil */
+  box-sizing: border-box;
+  /* Garante que padding não aumente a largura total */
+  font-size: 16px;
+  /* Tamanho de fonte consistente */
+}
+
+select {
+  margin-bottom: 10px;
+  /* Espaço extra abaixo do select */
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border: none;
+  /* Remove a borda padrão do botão */
+  transition: background-color 0.3s ease;
+  /* Transição suave no hover */
+}
+
+button:hover {
+  background-color: #00ff37;
+}
+
+button:disabled {
+  /* Estilo para botão desabilitado (durante carregamento) */
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#dep_result {
+  margin-top: 20px;
+  /* Espaço acima da área de resultado */
+  padding-top: 15px;
+  /* Espaço interno superior */
+  border-top: 1px solid #333;
+  /* Linha separadora */
+  word-wrap: break-word;
+  /* Quebra palavras longas como IDs */
+  text-align: left;
+  /* Alinha o texto do resultado à esquerda */
+}
+
+/* Estilos para a área do QR Code (adicionados) */
+.qr-container {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  /* Fundo claro para o QR code */
+  border-radius: 8px;
+  text-align: center;
+  /* Centraliza imagem e botão */
+  color: #333;
+  /* Cor de texto escura para contraste */
+}
+
+.qr-container img {
+  max-width: 80%;
+  /* Controla tamanho da imagem */
+  height: auto;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.qr-container strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.qr-container input[type="text"] {
+  width: calc(100% - 90px);
+  /* Ajusta largura para caber botão ao lado */
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #333;
+  background-color: #fff;
+}
+
+.qr-container button {
+  width: 80px;
+  /* Largura fixa para botão copiar */
+  padding: 8px 0;
+  /* Ajusta padding */
+  font-size: 14px;
+  /* Tamanho de fonte menor */
+  vertical-align: top;
+  /* Alinha com o input */
+}
+
+/* Estilos existentes (body, .container, h1, select, button, #dep_result, .qr-container etc.) */
+/* ... (mantenha seus estilos anteriores) ... */
+
+/* NOVO: Estilos para o formulário de cadastro */
+#registrationContainer {
+  /* Pode usar os mesmos estilos do .container ou diferenciar */
+  background: #001f3f;
+  /* Cor ligeiramente diferente para distinguir? */
+}
+
+#registrationForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Espaço entre os grupos de formulário */
+}
+
+.form-group {
+  text-align: left;
+  /* Alinha labels à esquerda */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* NOVO: Estilos para a área de mensagem */
+.message-area {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  min-height: 20px;
+  /* Para evitar que pule quando vazia */
+  display: none;
+  /* Começa oculta, mostrada via JS */
+}
+
+.message-area.success {
+  background-color: #d4edda;
+  color: #00ff3c;
+  border: 1px solid #c3e6cb;
+  display: block;
+  /* Mostra quando tem a classe */
+}
+
+.message-area.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+  /* Mostra quando tem a classe */
+}
+
+/* Garante que o container de pagamento comece oculto (já definido inline, mas bom ter no CSS) */
+#paymentContainer {
+  display: none;
+}
+
+@keyframes glitch {
+  0% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-5deg);
+    filter: hue-rotate(10deg);
+  }
+  40% {
+    transform: skew(5deg);
+    filter: hue-rotate(-10deg);
+  }
+  60% {
+    transform: skew(-5deg);
+    filter: hue-rotate(10deg);
+  }
+  80% {
+    transform: skew(5deg);
+    filter: hue-rotate(-10deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+@keyframes neonGlow {
+  0% {
+    filter: drop-shadow(0 0 5px #00ffea);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #00ffea);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #00ffea);
+  }
+}
+
+.logo {
+  animation: neonGlow 1.5s infinite alternate ease-in-out,
+    glitch 0.5s infinite steps(5, end);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.confirm-payment {
+  background: linear-gradient(90deg, #00ffea, #00ff1a);
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  width: 100%;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffea;
+  animation: glow 1.5s infinite alternate;
+  display: none; /* Oculto por padrão */
+}
+
+.confirm-payment:hover {
+  background: linear-gradient(90deg, #00ff1a, #00ffea);
+  box-shadow: 0 0 15px #00ffea;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #00ffea;
+  }
+  100% {
+    box-shadow: 0 0 20px #00ff1a;
+  }
+}

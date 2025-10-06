@@ -1,0 +1,233 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: #f1f1f1;
+	/* Fundo mais claro */
+	color: #333;
+	/* Texto mais escuro para contraste */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 40px 20px;
+}
+
+/* Sidebar */
+.sidebar a {
+	background: rgba(45, 117, 240, 0.1);
+	border: 1px solid #2d75f0;
+	color: #2d75f0;
+	padding: 10px 16px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+	background: rgba(45, 117, 240, 0.2);
+	color: #fff;
+	/* Cor de texto para quando o hover */
+}
+
+/* Cartão com efeito vidro e azul escuro */
+.card {
+	background: rgba(255, 255, 255, 0.9);
+	/* Fundo mais claro */
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	/* Borda sutil */
+	border-radius: 16px;
+	padding: 35px;
+	max-width: 520px;
+	width: 100%;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	/* Sombra suave */
+	backdrop-filter: blur(10px);
+	text-align: center;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Títulos */
+h2 {
+	color: #1ba924;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+/* Informações */
+.info {
+	margin: 12px 0;
+	font-size: 1.1rem;
+	color: #555;
+	/* Texto mais escuro */
+}
+
+.label {
+	color: #333;
+	/* Cor mais escura para destaque */
+	font-weight: bold;
+}
+
+/* Botões */
+a.whatsapp-link,
+a.saldo-btn,
+a.renovar-btn {
+	display: inline-block;
+	margin: 10px 6px;
+	padding: 12px 24px;
+	font-size: 1rem;
+	font-weight: bold;
+	border-radius: 8px;
+	text-decoration: none;
+	border: none;
+	color: #fff;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 0 12px rgba(45, 117, 240, 0.3);
+	background-color: #1ba924;
+	/* Verde moderno */
+}
+
+a.renovar-btn {
+	background-color: #2d75f0;
+	/* Azul mais claro */
+	box-shadow: 0 0 12px #2d75f0aa;
+}
+
+a.whatsapp-link:hover,
+a.saldo-btn:hover {
+	background-color: #30ce3b;
+	transform: translateY(-2px);
+}
+
+a.renovar-btn:hover {
+	background-color: #1c60d4;
+	transform: translateY(-2px);
+}
+
+/* Loader */
+.loader {
+	border: 5px solid rgba(255, 255, 255, 0.1);
+	border-top: 5px solid #1ba924;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	animation: spin 1s linear infinite;
+	margin: 20px auto;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 600px) {
+	.card {
+		padding: 25px;
+	}
+
+	a.whatsapp-link,
+	a.saldo-btn,
+	a.renovar-btn {
+		width: 100%;
+		margin: 8px 0;
+	}
+}
+
+/* Botão Voltar */
+.voltar-btn {
+	display: block;
+	margin-top: 20px;
+	padding: 12px 24px;
+	background-color: rgba(45, 117, 240, 0.1);
+	color: #2d75f0;
+	border: 1px solid #2d75f0;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background 0.3s ease, color 0.3s ease;
+	box-shadow: 0 0 8px rgba(45, 117, 240, 0.4);
+	text-align: center;
+}
+
+.voltar-btn:hover {
+	background-color: #2d75f0;
+	color: #fff;
+}
+
+.senha-card {
+	background-color: #dddddd;
+	padding: 20px;
+	border-radius: 12px;
+	margin-top: 20px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	animation: fadeIn 0.4s ease;
+}
+
+.senha-card h3 {
+	margin-bottom: 15px;
+	color: #fff;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.input-senha {
+	width: 90%;
+	padding: 12px;
+	border-radius: 8px;
+	border: none;
+	margin-bottom: 15px;
+	background-color: #b4b1b1;
+	color: #fff;
+	font-size: 1rem;
+	outline: none;
+}
+
+.nova-senha-wrapper {
+	position: relative;
+}
+
+.nova-senha-wrapper i {
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.btn-salvar {
+	width: 100%;
+	padding: 12px;
+	background-color: #28a745;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.btn-salvar:hover {
+	background-color: #218838;
+}
+
+#senha-status {
+	margin-top: 10px;
+	font-size: 0.9rem;
+	text-align: center;
+}

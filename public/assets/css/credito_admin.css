@@ -1,0 +1,104 @@
+body {
+	background-color: rgb(0, 0, 0);
+	color: white;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	padding: 30px 15px;
+	/* padding lateral menor para dispositivos menores */
+}
+
+.container {
+	background-color: #000d1e;
+	padding: 30px 20px;
+	border-radius: 16px;
+	max-width: 450px;
+	width: 100%;
+	/* torna responsivo */
+	margin: 0 auto;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+	max-width: 200px;
+	margin-bottom: 20px;
+}
+
+.endereco {
+	background-color: rgb(0, 56, 115);
+	/* destaque de endereço */
+	padding: 10px;
+	border-radius: 8px;
+	font-size: 14px;
+	word-wrap: break-word;
+	margin-bottom: 15px;
+}
+
+.copiar-btn {
+	background-color: #25D366;
+	/* botão verde */
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+
+.copiar-btn:hover {
+	background-color: rgb(27, 218, 53);
+	/* hover verde */
+}
+
+.rede {
+	color: #b3dcff;
+	/* azul claro para info secundária */
+	margin-bottom: 20px;
+}
+
+.alerta {
+	background-color: #004080;
+	/* azul escuro para alertas */
+	border-left: 4px solid #ffcc00;
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	overflow-x: auto;
+}
+
+table th,
+table td {
+	padding: 12px;
+	border: 1px solid rgb(2, 80, 163);
+	font-size: 14px;
+	/* fonte um pouco menor para telas pequenas */
+	word-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 20px 10px;
+	}
+
+	table th,
+	table td {
+		font-size: 13px;
+		padding: 8px;
+	}
+}
+
+table th {
+	background-color: rgb(0, 41, 84);
+}
+
+table td {
+	background-color: #004080;
+}

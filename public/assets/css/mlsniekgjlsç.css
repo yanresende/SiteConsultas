@@ -1,0 +1,240 @@
+body {
+  background-color: #000;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.admin-container {
+  background: #0b1e33;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 800px;
+  color: #fff;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #1c2d4a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background: #2d75f0;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #00ff88;
+  border: none;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #00cc6a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card-plano {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-width: 160px;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card-plano:hover {
+  transform: scale(1.03);
+}
+
+.card-plano h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.card-plano p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+#userList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+#userList li {
+  background-color: #ffffff;
+  border-left: 5px solid green;
+  padding: 15px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+#userList li:hover {
+  transform: scale(1.02);
+}
+
+#userList li.expirado {
+  border-left-color: red;
+  opacity: 0.7;
+}
+
+.user-label {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #555;
+}
+
+.user-info {
+  margin-bottom: 6px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #323232;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background-color: #2ecc71;
+}
+
+.toast.error {
+  background-color: #e74c3c;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  margin: 10% auto;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+  text-align: left;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-contador {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #2ebc2e;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-contador:hover {
+  background-color: #262626;
+  box-shadow: 0 0 8px rgba(9, 255, 0, 0.7);
+}

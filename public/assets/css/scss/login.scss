@@ -1,0 +1,179 @@
+@use "colors";
+
+/* Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	background: colors.$cor-secundaria;
+	color: colors.$cor-texto;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.login-container {
+	background: lighten(colors.$cor-secundaria, 5%);
+	border-radius: 16px;
+	width: 100%;
+	max-width: 400px;
+	padding: 40px 36px 48px;
+	box-shadow: 0 0 40px colors.$cor-sombra;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.logo {
+	width: 120px;
+	height: auto;
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.login-subtitle {
+	color: lighten(colors.$cor-secundaria, 40%);
+	font-size: 1rem;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: lighten(colors.$cor-secundaria, 30%);
+	user-select: none;
+	margin-bottom: 6px;
+}
+
+.input-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	left: 14px;
+	transform: translateY(-50%);
+	color: colors.$cor-texto;
+	font-size: 20px;
+	pointer-events: none;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	padding: 12px 12px 12px 40px;
+	border-radius: 12px;
+	border: 1.5px solid darken(colors.$cor-secundaria, 20%);
+	background-color: colors.$cor-input-bg;
+	color: colors.$cor-texto;
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	outline: none;
+	border-color: colors.$cor-primaria;
+	box-shadow: 0 0 10px colors.$cor-primaria + "88"; // adiciona transparência
+	background-color: lighten(colors.$cor-input-bg, 20%);
+}
+
+input::placeholder {
+	color: colors.$cor-texto;
+	font-weight: 400;
+	user-select: none;
+}
+
+button {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 1.125rem;
+	color: colors.$cor-texto;
+	border: none;
+	border-radius: 14px;
+	padding: 14px 0;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 6px 18px colors.$cor-sombra;
+	user-select: none;
+}
+
+.btn-login {
+	background: linear-gradient(135deg, darken(colors.$cor-primaria, 10%), colors.$cor-primaria);
+	letter-spacing: 0.04em;
+	box-shadow: 0 8px 24px colors.$cor-primaria + "cc";
+}
+
+.btn-login:hover,
+.btn-login:focus-visible {
+	background: linear-gradient(135deg, colors.$cor-primaria, darken(colors.$cor-primaria, 10%));
+	box-shadow: 0 12px 32px colors.$cor-primaria + "ee";
+	outline-offset: 2px;
+	outline: 2px solid lighten(colors.$cor-primaria, 10%);
+}
+
+.btn-subscribe {
+	background: transparent;
+	color: colors.$cor-primaria;
+	font-weight: 600;
+	border: 2.5px solid colors.$cor-primaria;
+	border-radius: 14px;
+	letter-spacing: 0.06em;
+	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-subscribe:hover,
+.btn-subscribe:focus-visible {
+	background-color: colors.$cor-primaria;
+	color: darken(colors.$cor-secundaria, 20%);
+	box-shadow: 0 6px 14px colors.$cor-primaria + "bb";
+	outline-offset: 2px;
+	outline: 2px solid darken(colors.$cor-primaria, 20%);
+}
+
+.subscribe-desc {
+	font-size: 0.875rem;
+	text-align: center;
+	color: colors.$cor-texto;
+	margin-top: 8px;
+	user-select: none;
+}
+
+.error-message {
+	color: red;
+	font-size: 14px;
+}
+
+@media (max-width: 480px) {
+	.login-container {
+		padding: 36px 24px 40px;
+	}
+
+	.login-logo {
+		font-size: 2rem;
+	}
+
+	button {
+		font-size: 1rem;
+		padding: 12px 0;
+	}
+}
